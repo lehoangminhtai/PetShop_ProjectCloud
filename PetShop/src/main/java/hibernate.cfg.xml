@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+ <session-factory>
+ 
+    <property name="hbm2ddl.auto">update</property>
+
+     <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2012Dialect</property>
+     <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+<!--      <property name="hibernate.connection.url">jdbc:sqlserver://ADMIN-PC:1433;databaseName=PetShop;</property> -->
+    <property name="hibernate.connection.url">jdbc:sqlserver://database-1.cs7vbesjzwqp.us-east-1.rds.amazonaws.com:1433;databaseName=PetShop;</property> 
+<!--      <property name="hibernate.connection.username">sa</property> -->
+<!--      <property name="hibernate.connection.password">Nguyentam_@1984</property> -->
+     <property name="hibernate.connection.username">admin</property>
+     <property name="hibernate.connection.password">12345678</property>
+     <property name="hibernate.show_sql">true</property>
+     <property name="hibernate.connection.release_mode">auto</property>
+     <property name="current_session_context_class">thread</property>
+     <property name="hibernate.connection.autoReconnect">true</property>
+
+
+     <mapping class="com.petshop.hibernate.entities.Product" />
+     <mapping class="com.petshop.hibernate.entities.User" />
+     <mapping class="com.petshop.hibernate.entities.Animal" />
+     <mapping class="com.petshop.hibernate.entities.Category" />
+     <mapping class="com.petshop.hibernate.entities.CategoryProduct" />
+     <mapping class="com.petshop.hibernate.entities.ProductImage" />
+     <mapping class="com.petshop.hibernate.entities.ProductDescription" />
+     <mapping class="com.petshop.hibernate.entities.Order" />
+     <mapping class="com.petshop.hibernate.entities.OrderDetail" />
+     <mapping class="com.petshop.hibernate.entities.FeedBack" />
+     <mapping class="com.petshop.hibernate.entities.User" />
+ </session-factory>
+
+</hibernate-configuration>
